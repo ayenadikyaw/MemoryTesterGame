@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Memory Tester</title>
+    <link rel="stylesheet" href="style_memory.css" />
+    <script src="script_memory.js" defer></script>
+  </head>
+  <body>
+    <!--Play Board-->
+    <div class="upperboard">
+      <div class="board">
+        <div class="upperCards">
+          <div class="card" id="1" onclick="play(this)"></div>
+          <div class="card" id="2" onclick="play(this)"></div>
+          <div class="card" id="3" onclick="play(this)"></div>
+          <div class="card" id="4" onclick="play(this)"></div>
+          <div class="card" id="5" onclick="play(this)"></div>
+          <div class="card" id="6" onclick="play(this)"></div>
+        </div>
+        <div class="lowerCards">
+          <div class="card" id="7" onclick="play(this)"></div>
+          <div class="card" id="8" onclick="play(this)"></div>
+          <div class="card" id="9" onclick="play(this)"></div>
+          <div class="card" id="10" onclick="play(this)"></div>
+          <div class="card" id="11" onclick="play(this)"></div>
+          <div class="card" id="12" onclick="play(this)"></div>
+        </div>
+      </div>
+
+      <!--right borad to show game instruction and win or lose-->
+      <div class="rightBoard">
+        <div class="howto">
+          <p>How to Play</p>
+          <p align="justify">
+            Test your memory with this memory game. First select the difficulty
+            level. The higher the number, the shorter the play time.
+            On the game board, there are always two identical images. Start the
+            game by flipping a card. Then try to find another card that has the
+            same image as the first. If you can't find a pair, the flipped cards
+            will be flipped back with the face down. Try to remember these
+            images as it becomes easier to find pairs the longer you play. When
+            you find a pair they are removed from the board and when you find
+            all the pairs in this memory, you have completed the level.
+          </p>
+          <p style="color:red">Better to wait to click until the cards flip back to normal.</p>
+          <p>Easy Mode => 35s, Medium Mode = 25s, Difficult = 18s</p>
+        </div>
+        <div id="winStatus"></div>
+        <div id="initial"></div>
+      </div>
+    </div>
+    <!--statistics and control box-->
+    <div class="status">
+      <div class="modes">
+        <div class="statistics">
+          <div class="missbox">
+            <div id="miss">0</div>
+            <div id="misstext">Misses</div>
+          </div>
+          <div class="timebox">
+            <div id="time">0</div>
+            <div id="timetext">Time Left</div>
+          </div>
+          <div class="movebox">
+            <div id="move">0</div>
+            <div id="movetext">Moves</div>
+          </div>
+          <div class="levelbox">
+            <div id="level">None</div>
+            <div id="leveltext">Difficulity Mode</div>
+          </div>
+        </div>
+        <!--play mode buttons-->
+        <div class="playModes">
+          <button id="easy" onclick="chooseMode(this)">Easy</button>
+          <button id="medium" onclick="chooseMode(this)">Medium</button>
+          <button id="difficult" onclick="chooseMode(this)">
+            Difficult
+          </button>
+        </div>
+      </div>
+      <button id="start" onclick="initialize()">Start</button>
+      <button id="restart" onclick="restart()">Restart</button>
+    </div>
+  </body>
+</html>
